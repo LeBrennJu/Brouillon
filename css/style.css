@@ -1,0 +1,99 @@
+header {
+	text-align: center;
+	background-image: url('../img/banniere\ ape.png');
+	background-size: cover;
+	background-position: center;
+	color: aliceblue;
+	text-shadow: 2px 2px 3px black;
+	padding: 1rem;
+}
+
+header h1 {
+	font-size: 3rem;
+
+}
+
+header h2 {
+	font-size: 1.5rem;
+}
+
+nav.menu {
+	font-size: 1.5rem;
+	height: auto;
+}
+
+.menu--page {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	justify-content: space-evenly;
+}
+
+.menu--open--fullscreen__header {
+	height: 10vh;
+}
+
+.menu--open--fullscreen__nav {
+	height: 90vh;
+	/* bottom: 0px; */
+}
+
+.menu {
+	margin-top: 0px;
+}
+
+
+button.menu--open,
+button.menu--close {
+	color: aliceblue;
+	font-size: 2rem;
+	text-shadow: 2px 2px 3px black;
+	background-color: rgba(240, 248, 255, 0);
+	border-style: none;
+}
+
+button.menu--open {
+	transform: rotate(90deg);
+	/* pour rectifier l'ombre du à la rotation */
+	text-shadow: 2px -2px 3px black;
+}
+
+.hide {
+	display: none;
+}
+
+
+.menu--page a {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+
+nav button {
+	float: right;
+	width: 2rem;
+	height: 2rem;
+	text-align: center;
+	font-weight: bold;
+}
+
+.sale--slider {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.sale--card {
+	display: block;
+	border: 2px solid black;
+	font-size: 1rem;
+	padding: 1rem;
+	width: 80%;
+	text-align: center;
+}
+
+.sale--list {
+	display: none;
+}
