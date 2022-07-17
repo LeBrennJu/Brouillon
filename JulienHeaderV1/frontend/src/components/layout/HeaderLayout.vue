@@ -56,22 +56,22 @@
 </template>
 
 <script>
-import profil from '@/assets/profil.svg'
+import profil from '@/assets/images/profil.svg'
 export default {
   name: 'HeaderLayout',
       data() {
         return {
-            profilPic: profil
+            profilPic: profil,
         }
     },
     methods: {
         showMenu(){
             let headerMenu= document.querySelector(".header--burger__menu")
             let body=document.querySelector("body")
-            console.log(body)
             body.classList.toggle("overflow--hidden")
             headerMenu.classList.toggle("active")
-        }
+        },
+        
     }
 }
 </script>
@@ -79,24 +79,19 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/css/utils/burgerAnim.scss";
 header{
-    // background-image: linear-gradient(#ec473f,#fdd14d,#c7b1d6,#b0ca00,#27a7c3);
-    height: 25%;
     width: 100%;
     display: flex;
-    flex-wrap: wrap; 
-    
+    flex-wrap: wrap;     
     //<--------------BANNER------------>
     .header--title{
     background-color: #0087ca;
     width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 2%;
+    margin: 1%;
     margin-bottom: 0%;
     border:outset;
-    border-radius: 4px;
+    justify-content: space-around;
         .header--profil__picture{
             background-color: white;
             width: 40px;
@@ -107,8 +102,7 @@ header{
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            font-weight: bold;
-            
+            font-weight: bold;           
                     
         }
         img{
@@ -140,38 +134,22 @@ header{
             position: relative;
             font-size: large;
         }
-        div:hover{
-            filter: brightness(1.5);
-        }
-        //HOVER NAV ANIMATE 
-        div:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -7px;
-            left: 0;
-            background-color: #0087ca;
-            transform-origin: bottom right;
-            transition: transform 0.50s ease-out;
-            }
-        div:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-            }        
+        //WE USE THE underlineAnim.scss for animate nav  
+        @import "../../assets/css/utils/underlineAnim.scss";     
     } 
 }
+//<----------------------MENU BURGER ---------------->
 .header--burger__menu{
     display: none;
-    background-color: #e2ffff;
     height: 1000vh;
     
+    
     ul{
+        padding-top: 2%;
         display:flex;
         flex-direction:column;
-        height: 50%;
         list-style-type: none;
+        border: outset;
         
         li{
             border: 1px solid #0087ca;
@@ -180,14 +158,15 @@ header{
             padding: 4%;
             border: outset;
             font-weight: bold;
+            margin-top: 1%;
+            background-color: #333;
+            color: white;
         }
         li:nth-child(2n+0){
-            background-color: #fdd14d;
-            box-shadow: inset -0.2em 0.2em white;
+            box-shadow: inset -0.2em 0.2em #0087ca;
         }
         li:nth-child(2n+1){
-            background-color: #ec473f;
-            box-shadow: inset 0.2em -0.2em #fdd14d;;
+            box-shadow: inset 0.2em 0.2em #0087ca;            
         }
     }
     .burger--menu__picture{
