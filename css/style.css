@@ -2,7 +2,7 @@ header {
 	text-align: center;
 	background-image: url('../img/banniere\ ape.png');
 	background-size: cover;
-	/* background-position: center; */
+	background-position: center;
 	color: aliceblue;
 	text-shadow: 2px 2px 3px black;
 	padding: 1rem;
@@ -19,22 +19,23 @@ header h2 {
 
 nav.menu {
 	font-size: 1.5rem;
-	height: auto;
+
 }
 
-.menu--page {
+.menu {
 	transform: translateX(0);
 	transition: transform 1.5s ease, opacity ease 1.2s;
 	opacity: 1;
 	background-color: goldenrod;
-	width: 100%;
-	left: 0px;
 	position: fixed;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
 	justify-content: space-evenly;
-
+	width: 100%;
+	height: 100vh;
+	left: 0px;
+	bottom: 0px;
 }
 
 .menu--page a {
@@ -67,15 +68,17 @@ nav.menu {
 
 
 .menu--open--fullscreen__header {
-	height: 10vh;
+	/* height: 10vh; */
 }
 
 .menu--open--fullscreen__nav {
-	height: 90vh;
+	/* height: 100vh;
+	bottom: 0px;
+	padding-top: 5rem; */
 }
 
 .menu {
-	margin-top: 0px;
+	/* margin-top: 0px; */
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -89,6 +92,11 @@ button.menu--close {
 	text-shadow: 2px 2px 3px black;
 	background-color: rgba(240, 248, 255, 0);
 	border-style: none;
+	/* position: fixed; */
+	float: right;
+	right: 1rem;
+	top: 1rem;
+	z-index: 11;
 }
 
 button.menu--open {
@@ -97,14 +105,11 @@ button.menu--open {
 	text-shadow: 2px -2px 3px black;
 }
 
-
-
-*/ nav button {
-	float: right;
+nav button {
 	width: 2rem;
 	height: 2rem;
-	text-align: center;
 	font-weight: bold;
+	z-index: 12;
 }
 
 .sale--slider {
@@ -112,6 +117,7 @@ button.menu--open {
 	align-items: baseline;
 	justify-content: space-between;
 	width: 100%;
+	background-color: aquamarine;
 }
 
 .sale--card,
@@ -142,23 +148,109 @@ button.menu--open {
 	font-weight: bold;
 }
 
+.event--list {
+	background-color: azure;
+}
+
 .sale--list {
 	display: none;
+	background-color: bisque;
 }
 
 
 footer {
 	border-top: 3px solid #f0f;
+	background-image: url(../img/dessins-enfants.png);
+	background-size: cover;
+	background-position: center;
+
 }
 
 .footer--list {
+
 	display: flex;
 	flex-wrap: wrap;
 	padding: 1rem;
+	background-color: rgba(59, 55, 55, 0.733);
 }
 
 .footer--list__link {
+	display: inline-block;
 	width: 40%;
-	padding: 1rem;
+	padding: 0.5rem;
+	font-size: 1rem;
 	text-align: center;
+	color: aliceblue;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+	.sale--list {
+		display: block;
+	}
+
+	.sale--slider {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	main {
+		width: auto;
+		display: flex;
+	}
+
+	.sale--slider {
+		display: none;
+	}
+
+	.event--list {
+		width: 70%;
+	}
+
+	.event--list ul {
+		width: 100%;
+		height: fit-content;
+		margin: 0px;
+		display: flex;
+		justify-content: center;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+
+	}
+
+	.event--card {
+		width: 40%;
+	}
+
+	.event--card__img {
+		width: 95%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.sale--list {
+		width: 30%;
+		height: 100vh;
+		overflow: auto;
+	}
+
+	.sale--list ul {
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.sale--card {
+		width: 80%;
+	}
+
+	.sale--card__img {
+		width: 95%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 }
