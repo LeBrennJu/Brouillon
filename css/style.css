@@ -1,3 +1,7 @@
+body {
+	height: 100vh;
+}
+
 header {
 	text-align: center;
 	background-image: url('../img/banniere\ ape.png');
@@ -44,11 +48,13 @@ nav.menu {
 	margin: 1rem;
 	display: inline-block;
 	text-align: center;
+	text-decoration: none;
+	color: aliceblue;
 }
 
-.menu--page img {
-	height: 3rem;
-	width: 3rem;
+.avatar {
+	height: 2.5rem;
+	width: 2.5rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -66,19 +72,7 @@ nav.menu {
 	font-size: 2em;
 }
 
-
-.menu--open--fullscreen__header {
-	/* height: 10vh; */
-}
-
-.menu--open--fullscreen__nav {
-	/* height: 100vh;
-	bottom: 0px;
-	padding-top: 5rem; */
-}
-
 .menu {
-	/* margin-top: 0px; */
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -92,7 +86,6 @@ button.menu--close {
 	text-shadow: 2px 2px 3px black;
 	background-color: rgba(240, 248, 255, 0);
 	border-style: none;
-	/* position: fixed; */
 	float: right;
 	right: 1rem;
 	top: 1rem;
@@ -117,14 +110,22 @@ nav button {
 	align-items: baseline;
 	justify-content: space-between;
 	width: 100%;
-	background-color: aquamarine;
+}
+
+.sale--card {
+	background-color: rgba(127, 255, 212, 0.555);
+
+}
+
+.event--card {
+
+	background-color: rgba(218, 165, 32, 0.247);
 }
 
 .sale--card,
 .event--card {
 	display: block;
 	border: 1px solid black;
-	background-color: rgba(218, 165, 32, 0.247);
 	border-radius: 1rem;
 	font-size: 1rem;
 	padding: 1rem;
@@ -138,7 +139,8 @@ nav button {
 
 .sale--card__img,
 .event--card__img {
-	height: 2rem;
+	height: 4rem;
+	width: 6rem;
 	float: left;
 }
 
@@ -160,14 +162,18 @@ nav button {
 
 footer {
 	border-top: 3px solid #f0f;
+	background-color: aliceblue;
 	background-image: url(../img/dessins-enfants.png);
 	background-size: cover;
 	background-position: center;
+	/* position: relative; */
+	position: sticky;
+	width: 100%;
+	bottom: 0px;
 
 }
 
 .footer--list {
-
 	display: flex;
 	flex-wrap: wrap;
 	padding: 1rem;
@@ -184,6 +190,15 @@ footer {
 	font-weight: bold;
 }
 
+@media screen and (max-width: 600px) {}
+
+
+/* 
+-------------------
+      TABLET
+------------------- 
+*/
+
 @media screen and (min-width: 600px) {
 	.sale--list {
 		display: block;
@@ -194,10 +209,24 @@ footer {
 	}
 }
 
+
+
+/* 
+-------------------
+       DESKTOP
+------------------- 
+*/
+
 @media screen and (min-width: 800px) {
 	main {
-		width: auto;
+		width: 100%;
+		opacity: 1;
 		display: flex;
+	}
+
+	button.menu--open,
+	button.menu--close {
+		display: none;
 	}
 
 	.sale--slider {
@@ -208,9 +237,8 @@ footer {
 		width: 70%;
 	}
 
-	.event--list ul {
+	.event--list__ul {
 		width: 100%;
-		height: fit-content;
 		margin: 0px;
 		display: flex;
 		justify-content: center;
@@ -232,18 +260,17 @@ footer {
 
 	.sale--list {
 		width: 30%;
-		height: 100vh;
-		overflow: auto;
 	}
 
-	.sale--list ul {
-
+	.sale--list__ul {
+		overflow: scroll;
 		display: flex;
 		flex-direction: column;
 	}
 
 	.sale--card {
 		width: 80%;
+		margin: 1rem;
 	}
 
 	.sale--card__img {
@@ -251,6 +278,45 @@ footer {
 		height: auto;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+
+	.menu {
+		/* width: 100%; */
+		opacity: 1;
+		transform: translateX(0);
+
+		background-color: rgba(51, 49, 45, 0.26);
+		display: inline-block;
+		display: flex;
+		height: auto;
+		position: inherit;
+	}
+
+	.menu--page {
+		display: inline-block;
+	}
+
+	.menu--page a {
+		width: auto;
+		display: inline;
+		font-size: 1.2rem;
+		margin: 1rem;
+		text-align: center;
+		text-decoration: none;
+		color: aliceblue;
+	}
+
+	.menu--page a:hover {
+		font-size: 1.5rem;
+	}
+
+	.menu--page img {
+		float: right;
+		/* height: 3rem;
+		width: 3rem;
+		margin-left: auto;
+		margin-right: auto; */
 	}
 
 }
