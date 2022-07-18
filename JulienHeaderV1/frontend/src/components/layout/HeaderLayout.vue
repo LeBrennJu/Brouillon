@@ -2,18 +2,15 @@
     <div>
         <header>
                 <div class="header--title">
-                    
-                        <h1>APE Crosmieres</h1> 
-                    
-                    <div v-bind:class="'header--profil__picture'">
-                    <div>
-                        <img v-bind:src="profilPic">
-                    </div>
-                        
-                        <div class="header--profil__user">
-                            Admin
-                        </div>
-                    </div>
+
+                         <img class="header--title__logo" v-bind:src="logoApe" alt="">
+
+                        <h1><span>A</span>ssociations des <span>P</span>arents d'<span>E</span>leve <div class="header--town">de Crosmières</div></h1>
+
+                      <div class="header--profil__picture">
+                        <div class="header--nav__Inscription" style="margin-right: 4px;">Inscription /</div>
+                        <div class="header--nav__Connexion"> Connexion</div>
+                      </div>
         <!-- /*<--------------------Button menu BURGER HIDDEN IN DESKTOP---------------------------->
                     <div class="header--burger__container">
 
@@ -29,23 +26,22 @@
                 </div>                
             
                 <nav>
-                    <div>Accueil</div>
-                    <div>Vente</div>
-                    <div>Evenement</div>
-                    <div>Présentation</div>
-                    <div>Inscription</div>
-                    <div>Connexion</div>            
+                    <div class="header--nav__Accueil">Accueil</div>
+                    <div class="header--nav__Vente">Vente</div>
+                    <div class="header--nav__Evenement">Evenement</div>
+                    <div class="header--nav__Presentation">Présentation APE</div>
+                        
                 </nav>
         </header>
           <!-- /*<--------------------MENU BURGER HIDDEN IN DESKTOP---------------------------->
         <div class="header--burger__menu">
             <ul>
-                <li>Accueil</li>
-                <li>Vente</li>
-                <li>Evenement</li>
-                <li>Présentation</li>
-                <li>Inscription</li>
-                <li>Connexion</li>
+                <li class="header--nav__Accueil">Accueil</li>
+                <li class="header--nav__Vente">Vente</li>
+                <li class="header--nav__Evenement">Evenement</li>
+                <li class="header--nav__Presentation">Présentation APE</li>
+                <li class="header--nav__Inscription">Inscription</li>
+                <li class="header--nav__Connexion">Connexion</li>
             </ul>
             <div v-bind:class="'burger--menu__picture'">
                 <img v-bind:src="profilPic">
@@ -56,138 +52,157 @@
 </template>
 
 <script>
-import profil from '@/assets/profil.svg'
+import profil from '@/assets/images/profil.svg'
+import assoLogo from '@/assets/images/logoAPE.jpeg'
 export default {
   name: 'HeaderLayout',
       data() {
         return {
-            profilPic: profil
+            profilPic: profil,
+            logoApe: assoLogo
         }
     },
     methods: {
         showMenu(){
             let headerMenu= document.querySelector(".header--burger__menu")
             let body=document.querySelector("body")
-            console.log(body)
             body.classList.toggle("overflow--hidden")
             headerMenu.classList.toggle("active")
-        }
+        },
+        
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap');
 @import "../../assets/css/utils/burgerAnim.scss";
 header{
-    // background-image: linear-gradient(#ec473f,#fdd14d,#c7b1d6,#b0ca00,#27a7c3);
-    height: 25%;
     width: 100%;
     display: flex;
-    flex-wrap: wrap; 
-    
+    flex-wrap: wrap;     
     //<--------------BANNER------------>
     .header--title{
-    background-color: #0087ca;
+    background-color: #46BFC7;;
     width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 2%;
+    margin: 1%;
     margin-bottom: 0%;
-    border:outset;
-    border-radius: 4px;
+    justify-content: space-around;
+        text-shadow: 1px 1px 1px black;
+        
+    .header--title__logo{
+        border-radius: 50%;
+        margin: 1%;
+        position: absolute;
+        left: 10px;
+        z-index: 1;
+        border: 3px solid black;
+        box-shadow: -1px 1px 3px 0px black;
+    }
         .header--profil__picture{
-            background-color: white;
-            width: 40px;
-            padding: 2%;
-            border: outset;
-            box-shadow: inset 0px 0px 2px 2px black;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            font-weight: bold;
-            
-                    
+               
+                display: flex;
+                padding: 1%;
+                align-items: flex-end;
+                width: 20%;
+                margin-bottom: 6px;
+                flex-wrap: wrap;
+                
         }
-        img{
-            height: 80%;
-            width: 80%;
-        }
+        .header--profil__picture div:hover{
+                    color: #0087ca;
+                }
+        
         h1{
             width: 100%;
-            font-size: 4rem;
-            font-weight: 900;
-            background-image: linear-gradient(0.25turn, #ec473f,40%, #fdd14d,60%, #c7b1d6,8%, #b0ca00,80%, #27a7c3);
-            background-clip: text;
-            color:transparent;  
+            font-size: 3rem; 
+            color: white;
+            font-family: 'Merienda', cursive;
+            span {
+                color:#FBAD18;
+            }
+            .header--town {
+                font-size: 2rem;
+            }
         }
-        .header--burger__container{
-            display: none;
-        }
+
 
     }
     //<-----------NAV----------->
     nav{
-    display: flex;
+     display: flex;
     flex-direction: row;
-    margin:2%;
     width: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 4px;
+    
+    .header--nav__Accueil{
+        background-color: #85B689; 
+     
+    }
+    .header--nav__Vente{
+        background-color:#FBAD18 ;
+      
+    }
+    .header--nav__Evenement{
+        background-color: #EF6852;
+     
+    }
+    .header--nav__Presentation{
+        background-color:  #F8AAA4;
+      
+    }
+    
         div{
-            width: 16.6666%;
-            display: inline-block;
-            position: relative;
-            font-size: large;
+                width: 25%;
+                display: inline-block;
+                position: relative;
+                font-size: large;
+                border-radius: 7px;
+                margin-right: 4px;
+                text-shadow: 1px 1px 1px black;
+                padding: 3px;
+
         }
-        div:hover{
-            filter: brightness(1.5);
-        }
-        //HOVER NAV ANIMATE 
-        div:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -7px;
-            left: 0;
-            background-color: #0087ca;
-            transform-origin: bottom right;
-            transition: transform 0.50s ease-out;
-            }
-        div:hover:after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-            }        
+        //WE USE THE underlineAnim.scss for animate nav  
+        @import "../../assets/css/utils/underlineAnim.scss";     
     } 
 }
+//<----------------------MENU BURGER ---------------->
 .header--burger__menu{
     display: none;
-    background-color: #e2ffff;
     height: 1000vh;
     
     ul{
+        padding-top: 2%;
         display:flex;
         flex-direction:column;
-        height: 50%;
         list-style-type: none;
-        
+        .header--nav__Accueil{
+        background-color: #85B689; }
+         .header--nav__Vente{
+        background-color: #FBAD18 ; }
+         .header--nav__Evenement{
+        background-color: #EF6852; }
+         .header--nav__Presentation{
+        background-color: #8FCED7; }
+         .header--nav__Inscription{
+        background-color: #F8AAA4; }
+         .header--nav__Connexion{
+        background-color:  #946973; }
         li{
-            border: 1px solid #0087ca;
-            font-size: x-large;
-            height: 100%;
-            padding: 4%;
-            border: outset;
-            font-weight: bold;
-        }
-        li:nth-child(2n+0){
-            background-color: #fdd14d;
-            box-shadow: inset -0.2em 0.2em white;
-        }
-        li:nth-child(2n+1){
-            background-color: #ec473f;
-            box-shadow: inset 0.2em -0.2em #fdd14d;;
+                font-size: x-large;
+                height: 100%;
+                padding: 6%;
+                font-weight: bold;
+                margin-top: 1%;
+                color: white;
+                border-radius: 22px;
+                box-shadow: 1px 1px 1px;
+                margin: 1%;
         }
     }
     .burger--menu__picture{
@@ -203,7 +218,25 @@ header{
         box-shadow: -0.5em 0.5em black;
     }
 }
+
+
 //<----------Media queries-------->
+@media (max-width: 1311px) {
+    header .header--title .header--title__logo{
+        position: unset;
+        float: left;
+        border-radius: 50%;
+        margin:0;
+        left: 0;
+        z-index: 1;
+        
+    }
+  }
+  @media (max-width: 800px) {
+    .header--title__logo{
+        height: 12vh;
+    }
+  }
     @media (max-width: 425px) {
         header{
 
