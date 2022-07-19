@@ -318,9 +318,5 @@ header {
         z-index: 1;
     }
 
-    .header--burger__container {
-        display: none;
-    }
-
 }
 </style>
