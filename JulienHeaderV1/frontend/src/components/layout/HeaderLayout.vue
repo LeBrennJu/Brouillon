@@ -5,7 +5,7 @@
 
                          <img class="header--title__logo" v-bind:src="logoApe" alt="">
 
-                        <h1><span>A</span>ssociations des <span>P</span>arents d'<span>E</span>leve <div class="header--town">de Crosmières</div></h1>
+                        <h1><span>A</span>ssociation des <span>P</span>arents d'<span>E</span>lèves <div class="header--town">de Crosmières</div></h1>
 
                       <div class="header--profil__picture">
                         <div class="header--nav__Inscription" style="margin-right: 4px;">Inscription /</div>
