@@ -3,13 +3,13 @@ module.exports = defineConfig({
   transpileDependencies: true
 })
 
+// allows access to the sass variable
 module.exports = {
   css: {
     loaderOptions: {
       sass: {
         additionalData:
-        `@import "@/assets/css/_variables.scss";`
-        
+        `@import "@/assets/css/_variables.scss";`      
       }
     }
   }
