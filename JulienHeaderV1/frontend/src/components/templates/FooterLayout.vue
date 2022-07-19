@@ -36,7 +36,7 @@ footer{
             position: relative;
         }
         //WE USE THE underlineAnim.scss for animate footer li  
-        @import "../../assets/css/utils/underlineAnim.scss";
+        @import "../../assets/css/animations/underlineAnim.scss";
     }
 }
 //MEDIA QUERIES 
