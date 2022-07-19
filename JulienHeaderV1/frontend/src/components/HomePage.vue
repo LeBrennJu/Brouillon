@@ -30,7 +30,7 @@
 
                 </ul>
         </section>
-            <!-- //Liste Vente  -->
+            <!-- Liste Vente  -->
         <section class="sale--section">
             <ul class="sale--list">
 
