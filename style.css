@@ -148,7 +148,7 @@ body {
 /* header */
 
 header {
-	background-image: linear-gradient(to left, #fdd14d, #b0ca00);
+	background-color: #46BFC7;
 	height: 20%;
 	height: 6rem;
 	width: 100%;
@@ -259,7 +259,7 @@ main {}
 
 /* footer */
 footer {
-	background-image: linear-gradient(to right, #fdd14d, #b0ca00);
+	background-image: #46BFC7;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -301,7 +301,42 @@ header a:active {
 		width: 70%;
 	}
 
+	#burger--close, #burger--open {
+		display: none;
+	}
 	.event--card {
 		width: 40%;
+	}
+
+	.burger--nav {
+		display: flex;
+		top: 20rem;
+
+
+	}
+	.home {
+		background-color: #85B689;
+		border:0.1rem solid #FFFFFF;
+	}
+	.sales {
+		background-color: #FBAD18;
+		border:0.1rem solid #FFFFFF;
+	}
+	.events {
+		background-color: #EF6852;
+		border:0.1rem solid #FFFFFF;
+	}
+	.registration {
+		background-color: #8FCED7;
+		border:0.1rem solid #FFFFFF;
+	}
+	.login{
+		background-color: #F8AAA4;
+		border:0.1rem solid #FFFFFF;
+	}
+	.presentation {
+		background-color: #946973;
+		border:0.1rem solid #FFFFFF;
+	
 	}
 }
