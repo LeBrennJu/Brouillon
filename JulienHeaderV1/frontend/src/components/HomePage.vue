@@ -87,6 +87,7 @@ main{
     justify-content: space-between;
     margin: 1%;
     .sale--section{
+        
         width: 30%;
         height: 100%;
         ul::-webkit-scrollbar {
@@ -97,7 +98,8 @@ main{
             list-style-type: none;
             overflow: scroll;
             li{
-                border: 1px solid black;
+                border-radius: 2rem 2rem;
+                border: 1px solid $black;
                 height: 30%;
                 margin-bottom: 1%;
             }
@@ -115,7 +117,8 @@ main{
             height: 100%;
             list-style-type: none;            
             li{
-                border: 1px solid black;
+                border-radius: 2rem 2rem;
+                border: 1px solid $black;
                 width:  47%;
                 height: 47%;
                 margin: 1%;
@@ -149,9 +152,7 @@ main{
                 li{
                 width: 95%;
             }
-            }
-            
-            
+            } 
         }
      }
 }

@@ -5,7 +5,7 @@
 
                 <img class="header--title__logo" v-bind:src="logoApe" alt="">
 
-                <h1><span>A</span>ssociations des <span>P</span>arents d'<span>E</span>leve <div class="header--town">de
+                <h1><span>A</span>ssociation des <span>P</span>arents d'<span>E</span>lèves <div class="header--town">de
                         Crosmières</div>
                 </h1>
 
@@ -29,8 +29,8 @@
 
             <nav>
                 <div class="header--nav__Accueil">Accueil</div>
-                <div class="header--nav__Vente">Vente</div>
-                <div class="header--nav__Evenement">Evenement</div>
+                <div class="header--nav__Vente">Ventes</div>
+                <div class="header--nav__Evenement">Evènements</div>
                 <div class="header--nav__Presentation">Présentation APE</div>
 
             </nav>
@@ -101,7 +101,7 @@ header {
             border-radius: 50%;
             margin: 1%;
             position: absolute;
-            left: 10px;
+            left: 1rem;
             z-index: 1;
             border: 3px solid $black;
             box-shadow: -1px 1px 3px 0px $black;
@@ -249,23 +249,9 @@ header {
 
 
 //<----------Media queries-------->
-@media (max-width: 1311px) {
-    header .header--title .header--title__logo {
-        position: unset;
-        float: left;
-        border-radius: 50%;
-        margin: 0;
-        left: 0;
-        z-index: 1;
 
-    }
-}
 
-@media (max-width: 800px) {
-    .header--title__logo {
-        height: 12vh;
-    }
-}
+
 
 @media (max-width: 425px) {
     header {
@@ -308,6 +294,32 @@ header {
             width: 20px;
             height: 20px;
         }
+    }
+
+}
+
+@media (max-width: 800px) {
+    .header--title__logo {
+        height: 12vh;
+    }
+
+    .header--burger__container {
+        display: none;
+    }
+}
+
+@media (max-width: 1311px) {
+    header .header--title .header--title__logo {
+        position: unset;
+        float: left;
+        border-radius: 50%;
+        margin: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .header--burger__container {
+        display: none;
     }
 
 }
